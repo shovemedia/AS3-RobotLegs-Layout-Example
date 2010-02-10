@@ -1,0 +1,23 @@
+Warts and all, here's an example that allows XML-defined layout heirarchies   to be linked to XML-defined views.
+
+You will need the latest RobotLegs / SwiftSuspenders (there was a recent XML injection fix)
+
+The RobotLegs StateMachine classes
+
+Tweener
+
+- -
+
+The core layout functionality is built upon Senocular's excellent classes, which are used here with a minor modification: rather than dispatching a generic Event.CHANGE, I changed it to specific LayoutEvent.SIZE_CHANGED and LayoutEvent.POSITION_CHANGED. I probably ought to be using his LayoutManager too, but I haven't figured it out yet.
+
+I threw the sample graphics together. The three yellow stars are tied to three layout states. Click to transition.
+
+- -
+
+* resizing the flash window updates the layout.
+* clicking a button while a transition is in progress will queue it.
+* resizing the flash window during transition is supported (and that's why everything is so complicated).
+
+- -
+
+Additional documentation coming soon. Promise.

@@ -1,0 +1,21 @@
+<skin>
+  <view layout="root" class="view.component.FooterView" useDefaultResize="true"  useDefaultReposition="true" />
+
+
+  <view layout="menu" class="view.component.MenuView" viewMediatorClassName="view.mediator.MenuViewMediator" useDefaultResize="true"  useDefaultReposition="true" />
+
+  <view layout="contentInner" class="ContentView" useDefaultResize="true"  useDefaultReposition="true" />
+
+<!--
+  <view layout="footerInnerE" class="view.component.FooterView" useDefaultResize="true"  useDefaultReposition="true" />
+  <view layout="footerInnerC" class="view.component.FooterView" useDefaultResize="true"  useDefaultReposition="true" />
+  <view layout="footerInnerB" class="view.component.FooterView" resizeHandler="onLayoutResize" repositionHandler="onLayoutReposition" />
+  <view layout="footerInnerCFollower" class="view.component.FooterView" useDefaultResize="true"  useDefaultReposition="true" />
+
+-->
+
+  <view layout="footer" class="view.component.FooterView" useDefaultResize="true"  useDefaultReposition="true" />
+
+
+
+</skin>

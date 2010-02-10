@@ -1,0 +1,20 @@
+package layout.model.events {
+	import com.senocular.display.Layout;
+
+	import flash.events.Event;
+
+	/**
+	 * @author projects
+	 */
+	public class LayoutEvent extends Event {
+		public static const ALIGNS_CHANGED:String = "ALIGNS_CHANGED";
+
+		public var layout:Layout;
+
+		public function LayoutEvent (type:String, layout:Layout)
+		{
+			this.layout = layout;
+			super(type);
+		}
+	}
+}

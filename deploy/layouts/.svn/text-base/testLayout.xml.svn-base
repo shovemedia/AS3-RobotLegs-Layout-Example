@@ -1,0 +1,180 @@
+<layout id="stageXX" left="10" top="10" right="10" bottom="10" percentWidth="1" percentHeight="1"
+  alpha=".8" color="0x000000"
+>
+
+<!--
+horizontalCenter	When set, if left or right is not set, the layout will be centered horizontally offset by the numeric value of this property.
+percentHorizontalCenter	When set, if left or right is not set, the layout will be centered horizontally offset by the value of this property multiplied by the containing width. A value of 0 represents 0% and 1 represents 100%.
+minHorizontalCenter	The minimum horizontal center location that can be applied through percentHorizontalCenter.
+maxHorizontalCenter	The maximum horizontal center location that can be applied through percentHorizontalCenter.
+verticalCenter	When set, if top or bottom is not set, the layout will be centered vertically offset by the numeric value of this property.
+percentVerticalCenter	When set, if top or bottom is not set, the layout will be centered vertically offset by the value of this multiplied by to the containing height. A value of 0 represents 0% and 1 represents 100%.
+minVerticalCenter	The minimum vertical center location that can be applied through percentVerticalCenter.
+maxVerticalCenter	The maximum vertical center location that can be applied through percentVerticalCenter.
+top	When set, the top of the layout will be located offset from the top of it's container by the value of this property.
+percentTop	When set, the top of the layout will be located offset by the value of this property multiplied by the containing height. A value of 0 represents 0% and 1 represents 100%.
+offsetTop	Add additional offset to be added to the top value after it has been set.
+minTop	The minimum top location that can be applied to the layout boundaries.
+maxTop	The maximum top location that can be applied to the layout boundaries.
+right	When set, the right of the layout will be located offset by the value of this property multiplied by the containing width.
+percentRight	When set, the right of the layout will be located offset by the value of this property multiplied by the containing width. A value of 0 represents 0% and 1 represents 100%.
+offsetRight	Add additional offset to be added to the right value after it has been set.
+minRight	The minimum right location that can be applied to the layout boundaries.
+maxRight	The maximum right location that can be applied to the layout boundaries.
+bottom	When set, the bottom of the layout will be located offset from the bottom of it's container by the value of this property.
+percentBottom	When set, the bottom of the layout will be located offset by the value of this property multiplied by the containing height. A value of 0 represents 0% and 1 represents 100%.
+offsetBottom	Add additional offset to be added to the bottom value after it has been set.
+minBottom	The minimum bottom location that can be applied to the layout boundaries.
+maxBottom	The maximum bottom location that can be applied to the layout boundaries.
+left	When set, the left of the layout will be located offset by the value of this property multiplied by the containing width.
+percentLeft	When set, the left of the layout will be located offset by the value of this property multiplied by the containing width. A value of 0 represents 0% and 1 represents 100%.
+offsetLeft	Add additional offset to be added to the left value after it has been set.
+minLeft	The minimum left location that can be applied to the layout boundaries.
+maxLeft	The maximum left location that can be applied to the layout boundaries.
+x	Defines the x location (top left) of the layout boundary. Unlike left, x does not affect a layout's width. Once left (or percentLeft) is set, the x value no longer applies. If percentX exists when x is set, percentX will be overridden and be given a value of NaN. When a Layout is created for a display object, this is defined as the x location of that display object. The value of x itself cannot be NaN.
+percentX	When set, the x location of the layout will be located at the value of this property multiplied by the containing width. A value of 0 represents 0% and 1 represents 100%.
+minX	The minimum x location that can be applied to the layout boundaries.
+maxX	The maximum x location that can be applied to the layout boundaries.
+y	Defines the y location (top left) of the layout boundary. Unlike top, y does not affect a layout's height. Once top (or percentTop) is set, the y value no longer applies. If percentY exists when y is set, percentY will be overridden and be given a value of NaN. When a Layout is created for a display object, this is defined as the y location of that display object. The value of y itself cannot be NaN.
+percentY	When set, the y location of the layout will be located at the value of this property multiplied by the containing height. A value of 0 represents 0% and 1 represents 100%.
+minY	The minimum y location that can be applied to the layout boundaries.
+maxY	The maximum y location that can be applied to the layout boundaries.
+width	Defines the width of the layout boundary. Once left (or percentLeft) or right (or percentRight) is set, the width value no longer applies. If percentWidth exists when width is set, percentWidth will be overridden and be given a value of NaN. When a Layout is created for a display object, this is defined as the width of that display object. The value of width itself cannot be NaN.
+percentWidth	When set, the width of the layout will be set as the value of this property multiplied by the containing width. A value of 0 represents 0% and 1 represents 100%.
+minWidth	The minimum width that can be applied to the layout boundaries.
+maxWidth	The maximum width that can be applied to the layout boundaries.
+height	Defines the height of the layout boundary. Once top (or percentTop) or bottom (or percentBottom) is set, the width value no longer applies. If percentWidth exists when width is set, percentWidth will be overridden and be given a value of NaN. When a Layout is created for a display object, this is defined as the height of that display object. The value of height itself cannot be NaN.
+percentHeight	When set, the height of the layout will be set as the value of this property multiplied by the containing height. A value of 0 represents 0% and 1 represents 100%.
+minHeight	The minimum height that can be applied to the layout boundaries.
+maxHeight	The maximum height that can be applied to the layout boundaries.
+-->
+
+<!--
+  id
+  color
+  alpha
+-->
+
+<!-- -->
+
+  <layout id="one" color="0xFF0000" alpha=".8"
+    percentHorizontalCenter=".5"
+    percentVerticalCenter=".5"
+	width="100"
+	percentWidth=".5" percentHeight=".5"
+  >
+
+	<layout id="innerZ" color="0xFFCC00" alpha=".8"
+	    top="10" minLeft="10" minRight="10"
+		minWidth="0" minHeight="0"
+		width="400"
+		percentWidth="1" percentHeight=".5"
+
+		maintainAspectRatio="1"
+	></layout>
+		<layout id="innerY" color="0x00CCFF" alpha="1"
+	    percentTop=".75" percentLeft="0"
+		percentWidth=".25" percentHeight=".25"
+	></layout>
+	<layout id="innerA" color="0xCC00FF" alpha=".5"
+	    percentTop=".75" percentLeft=".25"
+		percentWidth=".25" percentHeight=".25"
+	  >
+
+	    <align>
+	      <local percentRight="0" />
+	      <remote id="innerB" percentLeft="1" />
+	    </align>
+	    <align>
+	      <local percentTop="0" />
+	      <remote id="innerB" percentBottom="1" />
+	    </align>
+
+	  </layout>
+	<layout id="innerB" color="0x0000FF" alpha=".5"
+	    percentTop=".75" percentLeft=".75"
+		percentWidth=".25" percentHeight=".25"
+	></layout>
+	<layout id="innerC" color="0x00FF00" alpha=".5"
+	    top="10" bottom="10" offsetTop="5" offsetBottom="20"
+	    percentLeft=".5"
+		percentWidth=".25"
+	></layout>
+
+  </layout>
+
+  <layout id="two" color="0x00FF00" alpha=".8"
+
+    percentBottom=".75" percentLeft="0"
+	percentWidth=".25" percentHeight=".25"
+  >
+	<layout id="innerZ" color="0xFFCC00" alpha=".8"
+	    top="10" minLeft="10" minRight="10"
+		minWidth="0" minHeight="0"
+		width="400"
+		percentWidth="1" percentHeight=".5"
+
+		maintainAspectRatio="1"
+	>
+	</layout>
+		<layout id="innerY" color="0x00CCFF" alpha=".5"
+	    percentTop=".75" percentLeft="0"
+		percentWidth=".25" percentHeight=".25"
+	></layout>
+	<layout id="innerA" color="0xCC00FF" alpha=".5"
+	    percentTop=".75" percentLeft=".25"
+		percentWidth=".25" percentHeight=".25"
+	  ></layout>
+	<layout id="innerB" color="0x0000FF" alpha=".5"
+	    percentTop=".75" percentLeft=".75"
+		percentWidth=".25" percentHeight=".25"
+	></layout>
+	<layout id="innerC" color="0x00FF00" alpha=".5"
+	    percentTop=".75" percentLeft=".5"
+		percentWidth=".25" percentHeight=".25"
+	></layout>
+
+  </layout>
+
+  <layout id="three" color="0x0000FF" alpha=".8"
+
+    percentTop=".75" percentLeft=".75"
+	x="10" y="10" percentWidth=".25" percentHeight=".25"
+  >
+	<layout id="innerZ" color="0xFFCC00" alpha=".8" debug="1"
+	    top="10" minLeft="10" minRight="10"
+	    minWidth="0" minHeight="0"
+		width="400"
+		percentWidth="1" percentHeight=".5"
+
+		maintainAspectRatio="1"
+	>
+			<layout id="deepInnerY" color="0x00CCFF" alpha=".5"
+	    percentTop=".5" percentLeft="0"
+		percentWidth=".5" percentHeight=".25"
+		></layout>
+		<layout id="deepInnerA" color="0xCC00FF" alpha=".5"
+	    percentTop=".5" percentLeft=".5"
+		percentWidth=".5" percentHeight=".25"
+	 	 ></layout>
+	</layout>
+		<layout id="innerY" color="0x00CCFF" alpha=".5"
+	    percentTop=".75" percentLeft="0"
+		percentWidth=".25" percentHeight=".25"
+	></layout>
+	<layout id="innerA" color="0xCC00FF" alpha=".5"
+	    percentTop=".75" percentLeft=".25"
+		percentWidth=".25" percentHeight=".25"
+	  ></layout>
+	<layout id="innerB" color="0x0000FF" alpha=".5"
+	    percentTop=".75" percentLeft=".75"
+		percentWidth=".25" percentHeight=".25"
+	></layout>
+	<layout id="innerC" color="0x00FF00" alpha=".5"
+	    percentTop=".75" percentLeft=".5"
+		percentWidth=".25" percentHeight=".25"
+	></layout>
+  </layout>
+
+
+</layout>

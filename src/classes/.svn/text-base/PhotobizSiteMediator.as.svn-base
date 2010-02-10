@@ -1,0 +1,25 @@
+package {
+	import org.robotlegs.mvcs.Mediator;
+
+	/**
+	 * @author projects
+	 */
+
+	public class PhotobizSiteMediator extends Mediator {
+
+		public var view:PhotobizSite;
+
+		public function PhotobizSiteMediator()
+		{
+			trace ("new PhotobizSiteMediator");
+		}
+
+		override public function onRegister():void
+		{
+			//view.appLabel.text = "It's alive!"
+			trace ("PhotobizSiteMediator onRegister: " + view  )
+		}
+
+
+	}
+}

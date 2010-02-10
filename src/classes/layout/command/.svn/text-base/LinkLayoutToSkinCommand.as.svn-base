@@ -1,0 +1,85 @@
+package layout.command {
+	import layout.model.LayoutModel;
+	import layout.model.SkinModel;
+
+	import com.senocular.display.Layout;
+
+	import org.robotlegs.mvcs.Command;
+
+	import flash.display.DisplayObject;
+	import flash.events.Event;
+	import flash.utils.Dictionary;
+	import flash.utils.getDefinitionByName;
+
+	/**
+	 * @author projects
+	 */
+	public class LinkLayoutToSkinCommand extends Command {
+
+		[Inject]
+		public var view:PhotobizSite;
+
+		public var layoutModel:LayoutModel;
+
+		public var skinModel:SkinModel;
+		//public var viewClassnameByLayoutId:Array;
+
+		public var viewsByLayout:Dictionary;
+
+		public var layoutChangeCallback:Function;
+
+
+		override public function execute():void
+		{
+			var layouts:Array = layoutModel.getLayouts();
+
+			var layout:Layout;
+
+			for each (layout in layouts)
+			{
+				layout.addEventListener(Event.CHANGE, layoutChangeCallback)
+			}
+
+			var viewClassnameByLayoutId:Array = skinModel.getViewClassnameByLayoutIds();
+
+			for (var layoutId:String in viewClassnameByLayoutId)
+			{
+				var className:String = viewClassnameByLayoutId[layoutId];
+				var viewClass:Class = Class(getDefinitionByName(className));
+
+				var skinView:DisplayObject = new viewClass();
+				skinView.alpha = .5;
+
+				layout = layouts[layoutId];
+
+				//view.setLayout(layout);
+
+				trace (layout.rect)
+
+				addViewTargetToLayout(skinView, layout)
+
+				view.addChild(skinView);
+			}
+
+			for each (layout in layouts)
+			{
+				layout.dispatchEvent(new Event(Event.CHANGE));
+			}
+
+			//
+			injector.mapValue(Layout, layouts["contentInner"], "contentLayout");
+		}
+
+		private function addViewTargetToLayout(view:DisplayObject, layout:Layout):void
+		{
+		  if (!viewsByLayout[layout])
+		  {
+		  	viewsByLayout[layout] = new Array();
+		  }
+
+
+		  var viewList:Array = viewsByLayout[layout];
+		  viewList.push(view);
+		}
+	}
+}

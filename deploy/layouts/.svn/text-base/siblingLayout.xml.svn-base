@@ -1,0 +1,117 @@
+<layout id="stageXX" left="10" top="10" right="10" bottom="10" percentWidth="1" percentHeight="1"
+  alpha=".2" color="0x000000"
+>
+
+  <layout id="A Leader" percentWidth=".25" percentHeight=".25" percentLeft=".25" percentBottom=".65" color="0xCC0000" alpha=".8">
+  </layout>
+
+
+  <layout id="B Leader" percentWidth=".25" percentHeight=".25" percentLeft=".15" percentTop=".25" color="0xCC0000" alpha=".8">
+	  <layout id="child" percentWidth=".25" percentHeight=".25" percentLeft=".25" percentTop=".5" color="0xCC0000" alpha=".8">
+	  </layout>
+  </layout>
+
+  <layout id="C Leader" percentWidth=".2" percentHeight=".2" percentLeft=".75" percentTop=".75" color="0xCC0000" alpha=".8">
+	  <layout id="C child" percentWidth=".75" percentHeight=".75" percentLeft=".05" percentTop=".05" color="0xCC0000" alpha=".2">
+	  <layout id="C grandChild" percentWidth=".75" percentHeight=".75" percentLeft=".05" percentTop=".05" color="0xCC0000" alpha=".8">
+	  </layout>
+	  </layout>
+  </layout>
+
+
+
+
+
+
+
+
+  <layout debug="1" id="A Follower" percentWidth=".20" percentHeight=".2" color="0x0000CC" alpha=".8">
+    <align>
+      <local percentLeft=".5" color="0xFF0000" alpha=".4" />
+      <remote remoteId="A Leader" percentLeft=".5"  color="0xFF9900" alpha=".4" />
+    </align>
+    <align>
+      <local percentTop=".5"  color="0x00FFFF" alpha=".4" />
+      <remote remoteId="A Leader" percentBottom=".5"  color="0x0099FF" alpha=".4"  />
+    </align>
+  </layout>
+
+
+
+
+  <layout id="CCC Follower" percentWidth=".30" percentHeight=".3" color="0x00CC00" alpha=".5">
+    <align>
+      <local percentLeft="1" color="0xFF0000" alpha=".4" />
+      <remote remoteId="CC Follower" percentLeft="0"  color="0xFF9900" alpha=".4" />
+    </align>
+    <align>
+      <local percentBottom=".5" color="0xFF00FF" alpha=".4" />
+      <remote remoteId="CC Follower" percentBottom=".5"  color="0xFF99FF" alpha=".4"  />
+    </align>
+  </layout>
+
+
+  <layout id="CCCC Follower" width="30" height="30" color="0x00CC00" alpha=".5">
+  <layout id="CCCC Follower child" width="10" height="10" color="0x00CC00" alpha=".75"
+    percentHorizontalCenter=".5" percentVerticalCenter=".5"
+  ></layout>
+    <align>
+      <local percentLeft="0" color="0xFF0000" alpha=".4" />
+      <remote remoteId="CCC Follower" percentLeft="1"  color="0xFF9900" alpha=".4" />
+    </align>
+    <align>
+      <local percentBottom=".5" color="0xFF00FF" alpha=".4" />
+      <remote remoteId="CCC Follower" percentBottom=".5"  color="0xFF99FF" alpha=".4"  />
+    </align>
+  </layout>
+
+
+  <layout id="CC Follower" percentWidth=".30" percentHeight=".3" color="0x00CC00" alpha=".5">
+    <align>
+      <local percentLeft="1" color="0xFF0000" alpha=".4" />
+      <remote remoteId="C Follower" percentLeft="0"  color="0xFF9900" alpha=".4" />
+    </align>
+    <align>
+      <local percentBottom=".5" color="0xFF00FF" alpha=".4" />
+      <remote remoteId="C Follower" percentBottom=".5"  color="0xFF99FF" alpha=".4"  />
+    </align>
+  </layout>
+
+
+
+  <layout id="C Follower" width="50" height="125" color="0x0000CC" alpha=".8">
+    <align>
+      <local percentLeft=".5" color="0xFF0000" alpha=".4" />
+      <remote remoteId="C grandChild" percentLeft=".5"  color="0xFF9900" alpha=".4" />
+    </align>
+    <align>
+      <local percentBottom=".5" color="0xFF00FF" alpha=".4" />
+      <remote remoteId="C grandChild" percentBottom=".5"  color="0xFF99FF" alpha=".4"  />
+    </align>
+  </layout>
+
+
+
+
+
+
+
+
+
+
+
+  <layout id="B Follower" percentWidth=".50" percentHeight=".2" color="0x0000CC" alpha=".8">
+    <align>
+      <local percentLeft=".5" color="0xFF0000" alpha=".4" />
+      <remote remoteId="child" percentLeft=".5"  color="0xFF9900" alpha=".4" />
+    </align>
+    <align>
+      <local percentBottom=".5" color="0xFF00FF" alpha=".4" />
+      <remote remoteId="child" percentBottom=".5"  color="0xFF99FF" alpha=".4"  />
+    </align>
+  </layout>
+
+
+
+
+</layout>

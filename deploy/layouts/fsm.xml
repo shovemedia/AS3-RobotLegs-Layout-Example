@@ -1,0 +1,40 @@
+<fsm initial="SECTION_1">
+
+			    <!-- THE INITIAL STATE -->
+				<state name="SECTION_1" entering="ENTERING_SECTION" changed="ENTERED_SECTION" >
+
+				  <transition action="GOTO_SECTION_1"
+			       			   target="SECTION_1"/>
+
+			       <transition action="GOTO_SECTION_2"
+			       			   target="SECTION_2"/>
+
+			       <transition action="GOTO_SECTION_3"
+			       			   target="SECTION_3"/>
+
+				</state>
+
+				<state name="SECTION_2" entering="ENTERING_SECTION" changed="ENTERED_SECTION" >
+
+			       <transition action="GOTO_SECTION_1"
+			       			   target="SECTION_1"/>
+
+			       <transition action="GOTO_SECTION_3"
+			       			   target="SECTION_3"/>
+
+				</state>
+
+				<state name="SECTION_3" entering="ENTERING_SECTION" changed="ENTERED_SECTION" >
+
+			       <transition action="GOTO_SECTION_1"
+			       			   target="SECTION_1"/>
+
+			       <transition action="GOTO_SECTION_2"
+			       			   target="SECTION_2"/>
+
+				</state>
+
+
+				<!-- REPORT FAILURE FROM ANY STATE -->
+				<state name="FAILING" changed="FAIL"/>
+</fsm>

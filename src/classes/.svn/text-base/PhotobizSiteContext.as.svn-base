@@ -1,0 +1,246 @@
+package {
+	import layout.command.AddChildLayoutsToParentCommand;
+	import layout.command.AnimateLayoutCommand;
+	import layout.command.LinkLayoutToSkinCommand;
+	import layout.command.LoadClassLibraryCommand;
+	import layout.command.LoadLayoutConfigCommand;
+	import layout.command.LoadSkinConfigCommand;
+	import layout.model.LayoutModel;
+	import layout.model.SkinModel;
+	import layout.service.ClassLibraryLoader;
+	import layout.service.LayoutXmlLoader;
+	import layout.service.SkinXmlLoader;
+	import layout.service.events.ClassLibraryEvent;
+	import layout.service.events.LayoutServiceEvent;
+
+	import com.senocular.display.Layout;
+
+	import org.robotlegs.adapters.SwiftSuspendersInjector;
+	import org.robotlegs.base.ContextEvent;
+	import org.robotlegs.mvcs.Context;
+
+	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
+	import flash.display.Stage;
+	import flash.display.StageAlign;
+	import flash.display.StageScaleMode;
+	import flash.events.Event;
+	import flash.geom.Point;
+	import flash.geom.Rectangle;
+	import flash.utils.Dictionary;
+
+	/**
+	 * @author projects
+	 */
+	public class PhotobizSiteContext extends Context {
+
+		private var viewsByLayout:Dictionary;
+		private var stageLayout : Layout;
+		private var alignsInvalid : Boolean;
+
+		public function PhotobizSiteContext(contextView:DisplayObjectContainer)
+		{
+			viewsByLayout = new Dictionary();
+
+			var di_config:XML =
+			<types>
+
+			  <!-- VIEWS -->
+			  <type name="PhotobizSiteMediator">
+				<field name="view" />
+			  </type>
+
+			  <type name="view.component::RemoteImage">
+				<field name="imageUrl" injectionname="url" />
+			  </type>
+
+
+			  <!-- COMMANDS -->
+			  <type name="layout.command::LoadLayoutConfigCommand">
+			    <field name="service" />
+			  </type>
+
+			  <type name="layout.command::AddChildLayoutsToParentCommand">
+			    <field name="model" />
+			    <field name="parentLayout" injectionname="parentLayout" />
+			  </type>
+
+			  <type name="layout.command::LoadSkinConfigCommand">
+			    <field name="service" />
+			  </type>
+
+			  <type name="layout.command::LoadClassLibraryCommand">
+			    <field name="service" />
+			  </type>
+
+			  <type name="layout.command::LinkLayoutToSkinCommand">
+			  	<field name="view" />
+				<field name="layoutModel" />
+				<field name="skinModel" />
+			    <field name="viewsByLayout" injectionname="viewsByLayout" />
+			    <field name="layoutChangeCallback" injectionname="layoutChangeCallback" />
+			  </type>
+
+			  <type name="layout.command::AnimateLayoutCommand">
+			    <field name="layout" injectionname="contentLayout" />
+			  </type>
+
+
+			  <!-- SERVICES -->
+			  <type name="layout.service::LayoutXmlLoader">
+			    <field name="model" />
+				<field name="url" injectionname="layoutXmlUrl" />
+			  </type>
+
+			  <type name="layout.service::SkinXmlLoader">
+				<field name="url" injectionname="skinXmlUrl" />
+				<field name="model" />
+			  </type>
+
+			  <type name="layout.service::ClassLibraryLoader">
+				<field name="url" injectionname="classLibraryUrl" />
+			  </type>
+
+			</types>;
+
+
+
+
+			trace ("CREATE INJECTOR w/ CUSTOM CONFIG");
+			injector = new SwiftSuspendersInjector(di_config);
+
+
+			super(contextView);
+		}
+
+		override public function startup():void
+		{
+
+			// SERVICES
+			trace ("INJECTOR SERVICES");
+			injector.mapSingleton(LayoutXmlLoader);
+			injector.mapSingleton(SkinXmlLoader);
+			injector.mapSingleton(ClassLibraryLoader);
+
+
+
+			// VALUES
+			trace ("INJECTOR VALUES");
+			trace ("map context view " + contextView )
+			injector.mapValue(PhotobizSite, contextView)
+
+			injector.mapValue(String, "skins/sampleViews.swf", "classLibraryUrl");
+			injector.mapValue(String, "layouts/sampleLayout.xml", "layoutXmlUrl");
+			injector.mapValue(String, "skinConfigurations/sampleSkin.xml", "skinXmlUrl");
+
+			injector.mapSingleton(LayoutModel);
+			injector.mapSingleton(SkinModel);
+
+			injector.mapValue(Dictionary, viewsByLayout, "viewsByLayout");
+
+			injector.mapValue(Function, defaultLayoutChangeHandler, "layoutChangeCallback");
+
+			// COMMANDS
+			trace ("COMMANDS");
+			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, LoadLayoutConfigCommand);
+			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, LoadSkinConfigCommand);
+			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, LoadClassLibraryCommand);
+
+			commandMap.mapEvent(LayoutServiceEvent.LOADED, AddChildLayoutsToParentCommand, LayoutServiceEvent);
+
+			commandMap.mapEvent(ClassLibraryEvent.LOADED, LinkLayoutToSkinCommand, ClassLibraryEvent);
+			commandMap.mapEvent(ClassLibraryEvent.LOADED, AnimateLayoutCommand, ClassLibraryEvent);
+
+
+
+			// MEDIATORS
+			//trace ("VIEW MEDIATORS");
+			//mediatorMap.mapView(PhotobizSite, PhotobizSiteMediator);
+			//mediatorMap.mapView(ContentView, ContentViewMediator);
+
+
+
+			var stage:Stage = contextView.stage;
+
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			stage.align = StageAlign.TOP_LEFT;
+
+			stageLayout = new Layout(stage, true);
+
+			stageLayout.x = 0;
+			stageLayout.y = 0;
+			stageLayout.width = stage.stageWidth;
+			stageLayout.height = stage.stageHeight;
+
+			//trace (stage.stageWidth + " x " + stage.stageHeight)
+
+
+			injector.mapValue(Layout, stageLayout, "parentLayout");
+
+			trace ("INJECTOR CUSTOM CONFIG COMPLETE");
+
+			super.startup();
+		}
+
+		private function defaultLayoutChangeHandler(event:Event, layout:Layout = null) : void
+		{
+			//trace (new Error().getStackTrace());
+			if (event.target)
+			{
+			  layout = Layout(event.target);
+			}
+
+			// UPDATE ALL DISPLAY OBJECTS TIED TO THIS LAYOUT
+			var layoutRect:Rectangle = layout.rect;
+
+			var registrationPoint:Point = layout.getGlobalPoint();
+
+			var viewList:Array = viewsByLayout[layout];
+
+			for each (var view:DisplayObject in viewList)
+			{
+			  //trace (" * " + view)
+			  //var childLayoutRect:Rectangle = layout.rect;
+			  view.x = registrationPoint.x;
+			  view.y = registrationPoint.y;
+
+			  view.width = layoutRect.width;
+			  view.height = layoutRect.height;
+			}
+
+/*
+			 FORCE DISPATCH A CHANGE EVENT FOR CHILD VIEWS
+			 TODO: FIGURE OUT A WAY TO EITHER REMOVE THIS,
+			 OR PUSH INTO LAYOUT CLASS.
+
+			 If view heirarchy matches layout heirarchy, perhaps can skip???
+*/
+
+
+			var children:Dictionary = layout.getChildList();
+			for (var i:Object in children)
+			{
+				var layout:Layout = Layout(i);
+
+//				if (layout.isInvalid())
+//				{
+//				  trace ("context FORCED CHANGE DISPATCH");
+//				  //layout.dispatchEvent( new Event(Event.CHANGE));
+//				}
+//				else
+//				{
+//				 trace ("--SKIP-- context CHANGE DISPATCH");
+//				}
+//
+				layout.dispatchEvent(new Event(Event.CHANGE));
+//
+//
+//				defaultLayoutChangeHandler (new Event(Event.CHANGE), layout);
+
+				//layout.invalidate();
+			}
+		}
+
+	}
+
+}

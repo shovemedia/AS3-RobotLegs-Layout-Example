@@ -1,0 +1,273 @@
+package layout.service {
+	import layout.model.LayoutModel;
+	import layout.service.events.LayoutServiceEvent;
+
+	import com.senocular.display.Layout;
+
+	import org.robotlegs.mvcs.Actor;
+
+	import flash.events.Event;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
+
+	/**
+	 * @author projects
+	 */
+	public class LayoutXmlLoader extends Actor
+	{
+
+		public var url : String;
+
+		public var model:LayoutModel;
+
+		private var loaded : Boolean;
+
+
+
+		static private var layoutConstraintProperties:Array =
+		[	"horizontalCenter", "percentHorizontalCenter", "minHorizontalCenter", "maxHorizontalCenter",
+		    "verticalCenter", "percentVerticalCenter", "minVerticalCenter", "maxVerticalCenter",
+
+		    "top", "percentTop", "offsetTop", "minTop", "maxTop",
+		    "right", "percentRight", "offsetRight", "minRight", "maxRight",
+		    "bottom", "percentBottom", "offsetBottom", "minBottom", "maxBottom",
+			"left", "percentLeft", "offsetLeft", "minLeft", "maxLeft",
+
+			"x", "percentX", "minX", "maxX",
+			"y", "percentY", "minY", "maxY",
+			"width", "percentWidth", "minWidth", "maxWidth",
+			"height", "percentHeight", "minHeight", "maxHeight",
+
+			"maintainAspectRatio"];
+
+//		static private var alignConstraintProperties:Array =
+//		[
+//			"top", "percentTop", "offsetTop", "minTop", "maxTop",
+//		    "right", "percentRight", "offsetRight", "minRight", "maxRight",
+//		    "bottom", "percentBottom", "offsetBottom", "minBottom", "maxBottom",
+//			"left", "percentLeft", "offsetLeft", "minLeft", "maxLeft"
+//		];
+
+		static private var horizontalAlignConstraintProperties:Array =
+		[
+		    "right", "percentRight",
+			"left", "percentLeft"
+		];
+
+		static private var verticalAlignConstraintProperties:Array =
+		[
+		    "top", "percentTop",
+			"bottom", "percentBottom"];
+
+
+
+
+
+		public function LayoutXmlLoader() {
+
+		}
+
+		public function load():void
+		{
+			var urlLoader:URLLoader = new URLLoader()
+			urlLoader.addEventListener(Event.COMPLETE, parseContent)
+			urlLoader.load (new URLRequest(url))
+		}
+
+		public function parseContent(e:Event):void
+		{
+
+			var layoutList:XML = new XML(e.target.data);
+
+			for each (var layoutXml:XML in layoutList)
+			{
+				//var layout:Layout =
+				model.setLayout( parseLayout(layoutXml) );
+			}
+
+			var alignLayouts:XMLList = layoutXml.align;
+
+			for each (var alignXml:XML in layoutList)
+			{
+			  //trace ("  [sub]" + childLayout);
+			  //var alignLayout:Layout =
+				parseAlign(alignXml);
+			}
+
+			loaded = true;
+
+			trace ("LAYOUT SERVICE LOADED");
+
+			dispatch (new LayoutServiceEvent(LayoutServiceEvent.LOADED, model));
+		}
+
+
+
+
+
+
+		private function parseLayout(layoutXml:XML):Layout
+		{
+			trace ("NEW LAYOUT")
+			var layout:Layout = new Layout( null, false);
+
+			var attributes:XMLList = layoutXml.attributes();
+
+			var len:int = attributes.length();
+			for each(var attribute:XML in attributes)
+			{
+			  var attributeName:String = String(attribute.name());
+
+			  if (layoutConstraintProperties.indexOf( attributeName ) != -1)
+			  {
+			   	trace ("layoutConstraintProperties " + attributeName + " :: " + attribute + ":" + typeof(Number(attribute)+1))
+				layout[attributeName] = Number(attribute);
+			  }
+			  else
+			  {
+		  		var layoutData:Object = model.getDataByLayout(layout);
+
+			  	//trace ("custom " + attributeName + " :: " + attribute)
+			  	switch (attributeName)
+			  	{
+
+					case "alpha":
+					case "color":
+					  layoutData[attributeName] = Number(attribute);
+					  break;
+
+			  		case "id":
+			  		  trace ("-- NEW ID " + attribute);
+	  				  model.setLayoutById(String(attribute), layout);
+
+			  		default:
+			  		  layoutData[attributeName] = attribute;
+			  		break;
+			  	}
+
+			  }
+			}
+
+			model.addLayout (layout);
+
+			var childLayouts:XMLList = layoutXml.layout;
+
+			for each (var childLayoutXml:XML in childLayouts)
+			{
+			  //trace ("  [sub]" + childLayout);
+			  var childLayout:Layout = parseLayout(childLayoutXml);
+			  layout.addChild(childLayout)
+			}
+
+			return layout
+		}
+
+
+
+
+		private function parseAlign(layoutXml:XML):void
+		{
+
+			var alignNodes:XMLList = layoutXml.align;
+
+			for each (var alignXml:XML in alignNodes)
+			{
+				trace ("align for id: " + layoutXml.@id + " ::  "  + alignXml )
+				var localNode:XML = alignXml.local[0];
+				var remoteNode:XML = alignXml.remote[0];
+
+				var localNullLayout:Layout = parseLayout(localNode);
+				var remoteNullLayout:Layout = parseLayout(remoteNode);
+
+				localNullLayout.width = localNullLayout.height =
+				remoteNullLayout.width = remoteNullLayout.height =
+				  0;// 10; //2
+
+				var localLayout:Layout = model.getLayoutById(String(layoutXml.@id));
+				var remoteLayout:Layout = model.getLayoutById(String(remoteNode.@remoteId));
+
+				var layoutData:Object = {local:localLayout, remote:remoteLayout, localNull:localNullLayout, remoteNull:remoteNullLayout}
+
+				model.setAlignPairsByNullLayout(layoutData, localNullLayout);
+				model.setAlignPairsByNullLayout(layoutData, remoteNullLayout);
+
+				localLayout.addChild(localNullLayout);
+				remoteLayout.addChild(remoteNullLayout);
+
+				var isHorizontal:Boolean, isVertical:Boolean;
+				isHorizontal = isVertical = false;
+
+				var localAttributes:XMLList = localNode.attributes();//@*;
+				var remoteAttributes:XMLList = remoteNode.attributes();//@*;
+
+				//local only for now
+				for each(var attributeItem:XML in localAttributes)
+				{
+					var attributeName:String = String(attributeItem.name());
+
+					if (horizontalAlignConstraintProperties.indexOf( attributeName ) != -1) {
+						isHorizontal = true;
+						//trace ("IS HORIZONTAL! " + attributeName);
+					}
+				    else if (verticalAlignConstraintProperties.indexOf( attributeName ) != -1) {
+						isVertical = true;
+						//trace ("IS VERTICAL! " + attributeName);
+					}
+				}
+
+				if (layoutXml.@debug == 1)
+				{
+					var id:String;
+
+					var remoteDataByLayout:Object = model.getDataByLayout(remoteLayout);
+					var localDataByLayout:Object = model.getDataByLayout(localLayout);
+					var remoteNullDataByLayout:Object = model.getDataByLayout(remoteNullLayout);
+					var localNullDataByLayout:Object = model.getDataByLayout(localNullLayout);
+
+					id = "ALIGN_REMOTE_" + remoteDataByLayout.id;
+					remoteNullDataByLayout.id = id;
+					model.setLayoutById(id, remoteNullLayout);
+
+					id = "ALIGN_LOCAL_" + localDataByLayout.id;
+					localNullDataByLayout.id = id;
+					model.setLayoutById(id, localNullLayout);
+				}
+
+
+
+				if (isHorizontal)
+				{
+					//LayoutConstraint.EVENT_REPOSITION
+					remoteNullLayout.addEventListener(Event.CHANGE, model.updateHorizontalAlign);//, false, 100, true);
+				}
+				if (isVertical)
+				{
+					//LayoutConstraint.EVENT_REPOSITION
+					remoteNullLayout.addEventListener(Event.CHANGE, model.updateVerticalAlign);//, false, 100, true);
+				}
+
+				if (isHorizontal && isVertical)
+				{
+				  trace ("ALIGN CONFIG ERROR: Horizontal OR Vertical -- NOT BOTH")
+				}
+
+
+			}
+
+			var childLayouts:XMLList = layoutXml.layout;
+
+			for each (var childLayoutXml:XML in childLayouts)
+			{
+			  //trace ("  [sub]" + childLayout);
+			  //var childLayout:Layout = parseLayout(childLayoutXml);
+			  //layout.addChild(childLayout)
+			  //trace ("child align?");
+			  parseAlign(childLayoutXml);
+			}
+		}
+
+
+
+
+	}
+}

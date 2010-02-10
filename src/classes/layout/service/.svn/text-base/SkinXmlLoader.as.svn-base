@@ -1,0 +1,58 @@
+package layout.service {
+	import layout.model.SkinModel;
+	import layout.service.events.SkinServiceEvent;
+
+	import org.robotlegs.mvcs.Actor;
+
+	import flash.events.Event;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
+
+	/**
+	 * @author projects
+	 */
+	public class SkinXmlLoader extends Actor
+	{
+
+		public var url : String;
+
+		public var model: SkinModel;
+
+		private var loaded : Boolean;
+
+		public function SkinXmlLoader()
+		{
+		}
+
+		public function load():void
+		{
+			var urlLoader:URLLoader = new URLLoader()
+			urlLoader.addEventListener(Event.COMPLETE, parseContent)
+			urlLoader.load (new URLRequest(url))
+		}
+
+		public function parseContent(e:Event):void
+		{
+			var rootSkin:XML = new XML(e.target.data);
+
+			trace ("parse skin 1")
+
+			var viewList:XMLList = rootSkin.view;
+
+			for each (var viewXml:XML in viewList)
+			{
+				//trace (viewXml)
+				var layoutId:String = viewXml.@layout;
+				var viewClassName:String = viewXml.@['class'];
+
+				//trace ("new skin view: " + layoutId + " " + viewClassName)
+				model.setViewClassnameByLayoutId(viewClassName, layoutId);
+			}
+
+
+			loaded = true;
+
+			dispatch(new SkinServiceEvent(SkinServiceEvent.LOADED, model));
+		}
+	}
+}

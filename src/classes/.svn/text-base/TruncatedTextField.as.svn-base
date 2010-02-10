@@ -1,0 +1,93 @@
+package {
+	import flash.text.TextField;
+
+	/**
+	 * @author projects
+	 */
+	public class TruncatedTextField extends TextField {
+
+		//This will be placed between the text content and your label.
+		//Change to "" to remove.
+		public var spaceString:String = " ";
+
+		private var completeText:String;
+		private var truncatedLabel:String;
+
+		public function setTruncatedText (label:String):void
+		{
+			this.truncatedLabel = spaceString + label;
+		}
+
+		override public function set text (str:String):void
+		{
+			//trace ("set text " + str)
+			completeText = str;
+
+			var len:int = completeText.length;
+
+			do
+			{
+				var attemptToFitText:String =  completeText.substr(0, len) + truncatedLabel ;
+
+				trace (len + " " + [this.maxScrollH , this.maxScrollV] + " " + attemptToFitText);
+
+				super.text = ( attemptToFitText );
+
+				len--
+
+				if (len<0)
+				{
+					super.text = "";
+					break;
+				}
+			}
+			while (this.maxScrollH || this.maxScrollV>1)
+		}
+
+		override public function set htmlText (str:String):void
+		{
+			trace ("set htmlText " + str);
+			completeText = str;
+
+			super.htmlText = completeText;
+
+			var originalTextLength:int = super.text.length;
+
+			var len : int = originalTextLength;
+
+			// 1) The first time, we don't have to account for the label
+			// (it's not there), thereafter, we do.
+			// 2) If the truncatedLabel is itself HTML, we can't use truncatedLabel.length
+			// use a temp field to compute.
+
+			var truncatedLabelTextField:TextField = new TextField();
+			truncatedLabelTextField.htmlText = truncatedLabel;
+
+			var truncatedLabelLength:int = truncatedLabelTextField.text.length+1;
+			var endOffset:int = 1;
+
+			while (this.maxScrollH || this.maxScrollV > 1)
+			{
+				trace (len + " " + [maxScrollH, maxScrollV] + " " + super.htmlText);
+
+				replaceText(len-1, len + endOffset, "");
+				super.htmlText = super.htmlText + truncatedLabel;
+
+				if (len == originalTextLength)
+				{
+					trace ("FIRST TRUNCATE!");
+					//len -= truncatedLabelLength;
+					endOffset += truncatedLabelLength;
+				}
+
+				len--
+
+				if (len<0)
+				{
+					super.htmlText = "";
+					break;
+				}
+			}
+		}
+	}
+}

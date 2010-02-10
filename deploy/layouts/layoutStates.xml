@@ -1,0 +1,195 @@
+<layoutStates>
+
+<state name="SECTION_1">
+
+<layout id="root" percentWidth="1" percentHeight="1" alpha=".5"
+    top="20" bottom="20" left="20" right="120"
+	minWidth="200" minHeight="200"
+>
+
+
+  <layout id="contentZone"
+    percentWidth=".5" percentHeight="1"
+
+    y="20"
+    left="5" right="40"
+    x="10"
+    top="80" bottom="50"
+
+    alpha="0" color="0x00CC00"
+  >
+
+    <layout id="contentMain"
+      top="10" bottom="10" left="10" right="10"
+
+      alpha="0" color="0x00CCCC"
+
+      maintainAspectRatio="1"
+    >
+      <layout id="contentInner"
+	    percentWidth="1" percentHeight="1"
+
+        alpha=".75" color="0x00CC00">
+      </layout>
+    </layout>
+  </layout>
+
+
+
+  <layout id="menu" percentWidth=".5" percentHeight="1"
+    minHeight="10" maxHeight="180"
+    alpha="0" color="0xCC00CC">
+
+  </layout>
+
+
+
+
+
+  <layout id="footer" percentWidth="1" percentHeight="1" percentBottom="0"
+    minHeight="0" maxHeight="150"
+
+    left="20" right="20"
+
+    alpha="0" color="0xCC0000"
+    >
+  </layout>
+
+
+
+</layout>
+
+</state>
+
+
+
+
+
+
+
+<state name="SECTION_2">
+
+<layout id="root" percentWidth="1" percentHeight="1" alpha=".5"
+    top="20" bottom="20" left="20" right="20"
+	minWidth="200" minHeight="200"
+>
+
+
+  <layout id="contentZone"
+    percentWidth=".5" percentHeight="1"
+
+    y="20"
+    left="5" right="40"
+    x="10"
+    top="80" bottom="50"
+
+    alpha="0" color="0x00CC00"
+  >
+
+    <layout id="contentMain"
+      top="10" bottom="10" left="10" right="10"
+
+      alpha="0" color="0x00CCCC"
+
+      maintainAspectRatio="1"
+    >
+      <layout id="contentInner"
+	    percentWidth="1" percentHeight="1"
+
+        alpha=".75" color="0x00CC00">
+      </layout>
+    </layout>
+  </layout>
+
+
+
+  <layout id="menu" percentWidth=".5" percentHeight="1"
+    minHeight="10" maxHeight="80"
+    y="100"
+    alpha="0" color="0xCC00CC">
+
+  </layout>
+
+
+
+
+
+  <layout id="footer" percentWidth="1" percentHeight="1" percentBottom="0"
+    minHeight="0" maxHeight="50"
+
+    left="20" right="20"
+
+    alpha="0" color="0xCC0000"
+    >
+  </layout>
+
+
+
+</layout>
+
+</state>
+
+
+
+
+<state name="SECTION_3">
+
+<layout id="root" percentWidth="1" percentHeight="1" alpha=".5"
+    top="20" bottom="20" left="20" right="20"
+	minWidth="200" minHeight="200"
+>
+
+
+  <layout id="contentZone"
+    percentWidth="1" percentHeight="1"
+
+
+    left="5" right="5"
+    top="5" bottom="5"
+
+    alpha="0" color="0x00CC00"
+  >
+
+    <layout id="contentMain"
+      top="10" bottom="10" left="10" right="10"
+
+      alpha="0" color="0x00CCCC"
+
+      maintainAspectRatio="1"
+    >
+      <layout id="contentInner"
+	    percentWidth="1" percentHeight="1"
+
+        alpha=".75" color="0x00CC00">
+      </layout>
+    </layout>
+  </layout>
+
+
+
+  <layout id="menu" percentWidth=".5" percentHeight="1"
+    minHeight="10" maxHeight="80"
+    y="100"
+    alpha="0" color="0xCC00CC">
+
+  </layout>
+
+
+
+
+
+  <layout id="footer" percentWidth="1" percentHeight="1" percentBottom="0"
+    minHeight="0" maxHeight="50"
+
+    left="20" right="20"
+
+    alpha="0" color="0xCC0000"
+    >
+  </layout>
+
+
+
+</layout>
+
+</state>
+</layoutStates>

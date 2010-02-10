@@ -1,0 +1,1505 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<main>		
+
+	
+	
+	
+	<website id="18906" photographer_id="3152">
+		<templateToLoad id="426509">home.swf</templateToLoad>
+		
+		
+		<logo useimage="1" align="left" image="http://image3.photobiz.com/112/5_20100105154133_4100820_large.png" textsize="40"><![CDATA[PhotoBiz Demo 2]]></logo>
+		<musiconload volume="50"><![CDATA[http://image4.photobiz.com/1006/20081116232123_14776.mp3]]></musiconload>
+		<footer footer_align="center">
+		<![CDATA[2010 PhotoBiz Demo 2]]>
+		</footer>
+		<days><![CDATA[monday,tuesday,wednesday,thursday,friday,saturday,sunday]]></days>
+		<dayshort><![CDATA[mon,tues,wed,thu,fri,sat,sun]]></dayshort>
+		<months><![CDATA[January,February,March,April,May,June,July,August,September,October,November,December]]></months>
+		<monthshort><![CDATA[Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec]]></monthshort>		
+		<music_on><![CDATA[music,on]]></music_on>
+		<music_off><![CDATA[music,off]]></music_off>
+		
+		<pagetextsize>12</pagetextsize>
+		<pagetextsize2>12</pagetextsize2>
+		<pagetitlesize>28</pagetitlesize>
+		
+		<fieldrequired><![CDATA[required]]></fieldrequired>
+		<fieldinvalid><![CDATA[invalid]]></fieldinvalid>
+		<divider size="0"/>
+	</website>
+
+	
+	
+	
+
+
+
+
+
+	
+
+
+
+	
+<menu align="center">
+	
+	
+
+			
+				<menuitems>
+
+								<menuitem id="426509" item_target="info" movie_name="home.swf" music_url="http://image4.photobiz.com/1006/20081116232123_14776.mp3" volume="50" stopmusic="0"><![CDATA[Home]]></menuitem>
+				</menuitems>
+			
+		
+	
+			
+			
+				<menuitems>
+										
+								
+								
+								<menuitem id="426510" item_target="info" movie_name="na" music_url="na" volume="50" stopmusic="0"><![CDATA[Information]]></menuitem>
+								
+										
+										
+
+										
+										
+										<menuitem id="426511" item_target="info" movie_name="info.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[The Photographer]]></menuitem>
+										
+
+										
+										<menuitem id="426512" item_target="info" movie_name="info.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[Unique Features]]></menuitem>
+										
+
+										
+										<menuitem id="426513" item_target="info" movie_name="info.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[Our Products]]></menuitem>
+										
+								
+						
+				</menuitems>
+			
+		
+
+			
+			
+				<menuitems>
+										
+								
+								
+								<menuitem id="426514" item_target="info" movie_name="na" music_url="na" volume="50" stopmusic="0"><![CDATA[Portfolio]]></menuitem>
+								
+
+										
+										<menuitem id="426515" item_target="info" movie_name="gallery.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[Gallery 1]]></menuitem>
+
+										
+										<menuitem id="426516" item_target="info" movie_name="gallery.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[Gallery 2]]></menuitem>
+										<menuitem id="426517" item_target="info" movie_name="gallery.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[Gallery 3]]></menuitem>
+										
+								
+						
+				</menuitems>
+			
+		
+
+			
+				<menuitems>
+						
+								
+								
+								<menuitem id="426518" item_target="info" movie_name="calendar.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[Calendar]]></menuitem>
+						
+				</menuitems>
+			
+		
+
+			
+			
+				<menuitems>
+						
+								
+								
+								<menuitem id="426519" item_target="_blank" movie_name="http://sample1.photobiz.com/cart" music_url="na" volume="50" stopmusic="0"><![CDATA[Online Ordering]]></menuitem>
+						
+				</menuitems>
+			
+		
+		
+
+			
+			
+			
+				<menuitems>
+						
+								
+								
+								<menuitem id="428092" item_target="info" movie_name="links.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[Videos]]></menuitem>
+						
+				</menuitems>
+			
+		
+
+			
+			
+				<menuitems>
+						
+								
+								
+								<menuitem id="426523" item_target="_blank" movie_name="http://blog.photobiz.com" music_url="na" volume="50" stopmusic="1"><![CDATA[Blog]]></menuitem>
+						
+				</menuitems>
+			
+
+			
+			
+			
+				<menuitems>
+						
+								
+								
+								<menuitem id="426524" item_target="info" movie_name="contact.swf" music_url="na" volume="50" stopmusic="0"><![CDATA[Contact Us]]></menuitem>
+						
+				</menuitems>
+			
+		
+
+	
+	</menu>
+
+	
+	
+	
+
+
+
+
+
+	
+	<home>	
+	
+		<home id="426509">
+		
+
+
+		
+
+
+
+		
+		
+			
+			
+			
+
+
+
+
+
+
+			<images time_on_screen="5" transition_speed="1.5" transition="0">
+			
+				<image color="5FA3B0" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image6.photobiz.com/2327/5_20100105135358_4100490_large.jpg]]></large>
+				</image>
+			
+				<image color="805741" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image6.photobiz.com/2552/5_20100105134609_4100350_large.jpg]]></large>
+				</image>
+			
+				<image color="973F3B" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image7.photobiz.com/2620/5_20100105134543_4100332_large.jpg]]></large>
+				</image>
+			
+				<image color="224004" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image5.photobiz.com/1534/5_20100105134600_4100341_large.jpg]]></large>
+				</image>
+			
+				<image color="8F3C44" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image9.photobiz.com/3015/5_20100105134527_4100326_large.jpg]]></large>
+				</image>
+			
+				<image color="AD9780" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image7.photobiz.com/2619/5_20100105134550_4100335_large.jpg]]></large>
+				</image>
+			
+				<image color="3C5A26" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image3.photobiz.com/112/5_20100105134630_4100366_large.jpg]]></large>
+				</image>
+			
+				<image color="242881" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image5.photobiz.com/1534/5_20100105134613_4100353_large.jpg]]></large>
+				</image>
+			
+				<image color="na" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image8.photobiz.com/2726/5_20100105135405_4100493_large.jpg]]></large>
+				</image>
+			
+				<image color="D4AA80" blockDirection="na" transition="overlapping">
+				<large><![CDATA[http://image4.photobiz.com/842/5_20100105135402_4100491_large.jpg]]></large>
+				</image>
+			
+			</images>
+		
+		</home>
+		
+	</home>
+	
+	
+	
+	
+	
+
+
+
+
+	<info>	
+	
+		<info id="426511">
+			<header><![CDATA[The Photographer]]></header>
+			
+				
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+		
+
+
+
+
+
+			
+			<content><![CDATA[<P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Images provided by:</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">John * Edgar - Photography is located in the awesome city of Toronto, Canada.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Website: <A HREF="http://johnedgar.ca" TARGET="_blank">http://johnedgar.ca</A></FONT></P>]]></content>
+		
+		
+
+
+		
+
+
+
+			
+				
+				
+				
+				
+				
+				
+
+
+
+
+
+
+				<images align="right" time_on_screen="7.5" transition_speed="1.5" transition="0">
+				
+					<image color="4E4E4E"><![CDATA[http://image3.photobiz.com/111/5_20100105141201_4100562_large.jpg]]></image>
+				
+				</images>
+			
+		</info>
+	
+		<info id="426512">
+			<header><![CDATA[Unique Features]]></header>
+			
+				
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+		
+
+
+
+
+
+			
+			<content><![CDATA[<P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Switch Designs with One Click of the Mouse :: No Additional Cost :: No Additional Work</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Switch within our five (5) collections or between our different collections.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• With one click of your mouse, your entire website will transform to a new template design.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• No need to pay any additional fees or re-upload images. No Hassle.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Fully Customizable Template</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Upload your own Image Background!</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Adjust your templates, colors and font styles to fit your own unique look.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Changeable font styles.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Multiple Music Upload (per gallery and home page).</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Advanced Search Engine Optimization (SEO)</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Proprietary PhotoBiz Search Engine Optimization (SEO) gives your website a competitive advantage.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Our exclusive SEO uses page specific Meta tags, sophisticated XML site mapping, deep linking and HTML mirror sites to enhance online visibility.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Your website will be automatically submitted to the top five major search engines every time you make updates for best results!</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Automatic Image Resize &amp; Very Easy-to-use System</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Our system will automatically resize your images to perfectly fit PhotoBiz Flash Templates in seconds.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Our user friendly (Drag &amp; Drop System) requires no programming or web design knowledge.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Change your images and text content unlimited times.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Web based application eliminates software downloads and compatible with both Mac &amp; PC.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Multiple Websites in one Account!</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Tailor your website to your target market by using our multiple sub sites.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Sub sites will allow you to create multiple websites using one domain name and sharing one Monthly Plan.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Each Sub Site can be a unique template and branding using a sub domain (i.e. Wedding.youdomainname.com).</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Passionate Support :: Guaranteed Satisfaction!</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF"></FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Free and Unlimited Access to our Passionate Team of Web Consultant Experts.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• Personalized service by phone or email.</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">• 30 Day Money Back Guarantee.</FONT></P>]]></content>
+		
+		
+
+
+		
+
+
+
+			
+				<images/>
+			
+		</info>
+	
+		<info id="426513">
+			<header><![CDATA[Our Products]]></header>
+			
+				
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+		
+
+
+
+
+
+			
+			<content><![CDATA[<LI><FONT SIZE="16" COLOR="#FFFFFF"> 	Online Proofing/Ordering System  	$125 one-time fee  	 (regular $250)</FONT></LI><LI><FONT SIZE="16" COLOR="#FFFFFF">	Flash Website Template 	$125 one-time fee 	(regular $250)</FONT></LI><LI><FONT SIZE="16" COLOR="#FFFFFF">	HTML Website Template 	$45 one-time fee 	(regular $90)</FONT></LI><LI><FONT SIZE="16" COLOR="#FFFFFF">	Client Viewing System 	FREE 	(regular $50)</FONT></LI><LI><FONT SIZE="16" COLOR="#FFFFFF">	Mobile Site (iPhone only) 	$25 one-time fee 	(regular $50)</FONT></LI><LI><FONT SIZE="16" COLOR="#FFFFFF">	Client Mini-Sites (Introduction Price) 	$145 one-time fee 	(regular $350)</FONT></LI>]]></content>
+		
+		
+
+
+		
+
+
+
+			
+				
+				
+				
+				
+				
+				
+
+
+
+
+
+
+				<images align="left" time_on_screen="7.5" transition_speed="1.5" transition="0">
+				
+					<image color="B64D00"><![CDATA[http://image3.photobiz.com/111/5_20100105141134_4100560_large.jpg]]></image>
+				
+				</images>
+			
+		</info>
+	
+	</info>
+
+	
+	
+	
+	
+
+
+
+
+
+	<galleries>
+	
+		
+
+
+		
+
+
+
+		
+		
+			<gallery id="426515" thumbnail_align="right">
+			
+			
+			
+			
+			
+
+
+
+
+
+
+			<images time_on_screen="7.5" transition_speed="1.5" transition="0">
+			
+				<image color="B8041D">
+				<large>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105134549_4100334_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105134549_4100334_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="4AF8F">
+				<large>
+				<![CDATA[http://image4.photobiz.com/842/5_20100105134626_4100362_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image4.photobiz.com/842/5_20100105134626_4100362_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="2D1B0D">
+				<large>
+				<![CDATA[http://image5.photobiz.com/1534/5_20100105134642_4100376_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image5.photobiz.com/1534/5_20100105134642_4100376_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="941520">
+				<large>
+				<![CDATA[http://image8.photobiz.com/2606/5_20100105143523_4100687_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image8.photobiz.com/2606/5_20100105143523_4100687_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="49470E">
+				<large>
+				<![CDATA[http://image8.photobiz.com/2702/5_20100105134539_4100331_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image8.photobiz.com/2702/5_20100105134539_4100331_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="7B8678">
+				<large>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105143524_4100688_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105143524_4100688_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="4E2624">
+				<large>
+				<![CDATA[http://image7.photobiz.com/2665/5_20100105143608_4100689_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image7.photobiz.com/2665/5_20100105143608_4100689_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="233462">
+				<large>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134631_4100367_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134631_4100367_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="9A6E55">
+				<large>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134657_4100388_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134657_4100388_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="243166">
+				<large>
+				<![CDATA[http://image3.photobiz.com/112/5_20100105134623_4100359_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image3.photobiz.com/112/5_20100105134623_4100359_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="A8BBC1">
+				<large>
+				<![CDATA[http://image8.photobiz.com/2606/5_20100105134605_4100346_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image8.photobiz.com/2606/5_20100105134605_4100346_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="604764">
+				<large>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105143255_4100677_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105143255_4100677_tiny.jpg]]>
+				</small>
+				</image>
+			
+			</images>
+			</gallery>
+			
+				
+	
+		
+
+
+		
+
+
+
+		
+		
+			<gallery id="426516" thumbnail_align="right">
+			
+			
+			
+			
+			
+
+
+
+
+
+
+			<images time_on_screen="7.5" transition_speed="1.5" transition="0">
+			
+				<image color="D04936">
+				<large>
+				<![CDATA[http://image7.photobiz.com/2607/5_20100105134553_4100338_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image7.photobiz.com/2607/5_20100105134553_4100338_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="2F5B7E">
+				<large>
+				<![CDATA[http://image3.photobiz.com/112/5_20100105134615_4100354_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image3.photobiz.com/112/5_20100105134615_4100354_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="3B533B">
+				<large>
+				<![CDATA[http://image5.photobiz.com/1534/5_20100105143135_4100658_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image5.photobiz.com/1534/5_20100105143135_4100658_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="9F9184">
+				<large>
+				<![CDATA[http://image8.photobiz.com/2606/5_20100105134552_4100336_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image8.photobiz.com/2606/5_20100105134552_4100336_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="6297C3">
+				<large>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105143137_4100660_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105143137_4100660_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="897672">
+				<large>
+				<![CDATA[http://image9.photobiz.com/3022/5_20100105134529_4100327_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image9.photobiz.com/3022/5_20100105134529_4100327_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="51505E">
+				<large>
+				<![CDATA[http://image8.photobiz.com/2702/5_20100105134530_4100328_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image8.photobiz.com/2702/5_20100105134530_4100328_tiny.jpg]]>
+				</small>
+				</image>
+			
+			</images>
+			</gallery>
+			
+				
+	
+		
+
+
+		
+
+
+
+		
+		
+			<gallery id="426517" thumbnail_align="right">
+			
+			
+			
+			
+			
+
+
+
+
+
+
+			<images time_on_screen="7.5" transition_speed="1.5" transition="0">
+			
+				<image color="8B8A78">
+				<large>
+				<![CDATA[http://image5.photobiz.com/1534/5_20100105134645_4100380_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image5.photobiz.com/1534/5_20100105134645_4100380_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="7B8058">
+				<large>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134616_4100356_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134616_4100356_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="790B16">
+				<large>
+				<![CDATA[http://image8.photobiz.com/2726/5_20100105143244_4100673_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image8.photobiz.com/2726/5_20100105143244_4100673_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="6D7F4B">
+				<large>
+				<![CDATA[http://image6.photobiz.com/2349/5_20100105134647_4100381_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image6.photobiz.com/2349/5_20100105134647_4100381_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="A0ACC6">
+				<large>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105143248_4100675_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105143248_4100675_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="2D1B11">
+				<large>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134638_4100374_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134638_4100374_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="687758">
+				<large>
+				<![CDATA[http://image5.photobiz.com/1534/5_20100105143246_4100674_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image5.photobiz.com/1534/5_20100105143246_4100674_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="C2A98A">
+				<large>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105134650_4100385_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image3.photobiz.com/111/5_20100105134650_4100385_tiny.jpg]]>
+				</small>
+				</image>
+			
+				<image color="A58C64">
+				<large>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134628_4100365_large.jpg]]>
+				</large>
+				<small>
+				<![CDATA[http://image7.photobiz.com/2619/5_20100105134628_4100365_tiny.jpg]]>
+				</small>
+				</image>
+			
+			</images>
+			</gallery>
+			
+				
+		
+	</galleries>
+	
+	
+	
+	
+	
+
+
+
+
+
+	<contact>	
+	
+		
+			
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+	
+		
+		
+		
+		
+ 
+	
+	
+		
+
+
+
+
+
+		
+		<contact id="426524">
+		<header><![CDATA[Contact Us]]></header>
+		<content><![CDATA[<P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">PhotoBiz LLC</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">Customer Support &amp; Sales: Monday through Friday 9am to 8pm EST</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">&gt;&gt; US Toll Free: 866-463-7620</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">&gt;&gt; Worldwide Toll-free (Skype): +1 866 463 7620</FONT></P><P ALIGN="LEFT"><FONT SIZE="16" COLOR="#FFFFFF">&gt;&gt; International: 336-272-7741</FONT></P>]]></content>
+		<email><![CDATA[sales@photobiz.com]]></email>
+		
+		
+
+
+		
+
+
+
+		
+		
+		
+			
+			
+			
+
+
+
+
+
+
+			<images align="left" time_on_screen="7.5" transition="0">
+			
+				<image color="D33A2"><![CDATA[http://image5.photobiz.com/1534/5_20100105141159_4100561_large.jpg]]></image>
+			
+			</images>
+		
+		
+		
+		
+
+
+
+
+
+		
+		
+		
+			<sendbutton><![CDATA[Send]]></sendbutton>
+			<contactform visible="1">
+			
+				
+				
+				
+				<field field_type="single" required="1"><![CDATA[Name]]></field>
+			
+				
+				
+				
+				<field field_type="single" required="1"><![CDATA[Email]]></field>
+			
+				
+				
+				
+				<field field_type="single" required="1"><![CDATA[Phone]]></field>
+			
+				
+				
+				
+				<field field_type="single" required="0"><![CDATA[Event Location]]></field>
+			
+				
+				
+				
+				<field field_type="single" required="0"><![CDATA[Event Date]]></field>
+			
+				
+				
+				
+				<field field_type="single" required="0"><![CDATA[Event Time]]></field>
+			
+				
+				
+				
+					
+				
+				<field field_type="multi" required="0"><![CDATA[Message]]></field>
+			
+			</contactform>
+				
+		</contact>
+	
+	</contact>
+
+	
+	
+
+
+
+
+
+	
+	
+	
+	
+	
+
+
+
+
+
+	<calendar>	
+	
+		
+			
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+		
+
+
+
+
+
+		
+		<calendar id="426518" align="left">
+		<header><![CDATA[Calendar]]></header>
+		<content><![CDATA[]]></content>
+		<calendar_email><![CDATA[fullscreen@photobiz.com]]></calendar_email>
+		<booked_date_message><![CDATA[these dates are booked]]></booked_date_message>
+		
+			<emailform visible="1"/>
+		
+		
+
+
+
+
+
+		
+			<booked_dates/>
+					
+		</calendar>
+	
+	</calendar>
+	
+	
+	
+	
+	
+
+
+
+
+
+	<links>
+	
+		<links id="428092" disable_music="1">
+			<header><![CDATA[Videos]]></header>
+			
+			
+
+
+
+
+
+			
+			<links>
+			
+				
+				
+				
+					
+				
+				<link>
+					<linkname><![CDATA[Facebook Tips (Part 1)]]></linkname>
+					<linkurl><![CDATA[javascript:Lightbox.open_ajax({width: 534, height: 330, caption: 'Facebook Tips (Part 1)', iframe: true, url: '/embedded_link_launch.cfm?link_itemID=67889' });]]></linkurl>
+					
+						
+					
+					<linkthumbail><![CDATA[na]]></linkthumbail>
+					<linktarget><![CDATA[_self]]></linktarget>
+					
+					<linkdescription><![CDATA[na]]></linkdescription>
+				</link>
+			
+				
+				
+				
+					
+				
+				<link>
+					<linkname><![CDATA[Customizable Backgrounds]]></linkname>
+					<linkurl><![CDATA[javascript:Lightbox.open_ajax({width: 534, height: 330, caption: 'Customizable Backgrounds', iframe: true, url: '/embedded_link_launch.cfm?link_itemID=67890' });]]></linkurl>
+					
+						
+					
+					<linkthumbail><![CDATA[na]]></linkthumbail>
+					<linktarget><![CDATA[_self]]></linktarget>
+					
+					<linkdescription><![CDATA[na]]></linkdescription>
+				</link>
+			
+			</links>			
+		</links>
+	
+		<links id="426522" disable_music="0">
+			<header><![CDATA[Links]]></header>
+			
+			
+
+
+
+
+
+			
+			<links>
+			
+			</links>			
+		</links>
+		
+	</links>
+
+
+	
+	
+		
+
+
+
+
+
+	<testimonials>
+	
+		<testimonials id="426521">
+		<header><![CDATA[Testimonials]]></header>
+			
+			
+
+
+
+
+
+			<testimonials>
+			
+		</testimonials>
+	</testimonials>
+	
+	</testimonials>
+	
+
+	
+	
+	
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+	<slideshows>
+		<slideshow id="426520">
+			<header><![CDATA[Slideshows]]></header>
+			<slideshows>
+			
+				<slideshow>
+					<url>na</url>
+					<thumbail>na</thumbail>
+					<target>na</target>
+					<slideshowView>na</slideshowView>
+					<description>No Slideshows at this time.</description>
+					<slideshowPass><![CDATA[0]]></slideshowPass>
+				</slideshow>
+			
+			</slideshows>
+		</slideshow>
+	</slideshows>
+	
+	
+</main>

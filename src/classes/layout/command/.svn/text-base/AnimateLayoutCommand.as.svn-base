@@ -1,0 +1,21 @@
+package layout.command {
+	import caurina.transitions.Tweener;
+
+	import com.senocular.display.Layout;
+
+	import org.robotlegs.mvcs.Command;
+
+	/**
+	 * @author projects
+	 */
+	public class AnimateLayoutCommand extends Command {
+
+		public var layout:Layout;
+
+		override public function execute():void
+		{
+			trace ("AnimateLayoutCommand " + layout);
+			Tweener.addTween(layout, { percentWidth:1, time:5, transition:"easeinoutquad", delay:2, onUpdate:layout.draw });
+		}
+	}
+}
