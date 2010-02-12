@@ -21,7 +21,7 @@ package layout.command {
 	 */
 	public class LinkLayoutToSkinCommand extends Command {
 
-		public var view:PhotobizSite;
+		public var view:Site;
 
 		public var layoutStatesModel:LayoutStatesModel;
 
